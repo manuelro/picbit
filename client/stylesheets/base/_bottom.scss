@@ -1,0 +1,5 @@
+@each $bottom-name, $bottom-value in $bottoms {
+  .#{$object-suffix}-bottom--#{$bottom-name} {
+    bottom: #{$bottom-value};
+  }
+}

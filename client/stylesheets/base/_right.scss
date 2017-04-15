@@ -1,0 +1,9 @@
+@each $right-name, $right-value in $rights {
+  .#{$object-suffix}-right--#{$right-name} {
+    right: #{$right-value};
+  }
+}
+
+.o-right--1-10 {
+  right: 10%;
+}

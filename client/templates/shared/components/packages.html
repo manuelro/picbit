@@ -1,0 +1,25 @@
+<template name="packages">
+  <div class="c-packages">
+    <h2 class="c-page__title">Packages</h2>
+    <ul class="c-packages__list">
+      {{# each resolver.global 'Packages' }}
+        <li>{{> package }}</li>
+      {{/ each }}
+    </ul>
+  </div>
+</template>
+
+<template name="package">
+  <div class="c-package c-package--{{id}}">
+    <h3 class="c-package__name">{{ name }}</h3>
+    <span class="c-package__price">${{ math.method 'round' fee }} / Month</span>
+    <p class="c-package__description">
+      {{ description }}
+      {{# if storage.useMb }}
+        Up to {{ storage.mb }}Mb per month.
+      {{ else }}
+        Up to {{ storage.gb }}Gb per month.
+      {{/ if }}
+    </p>
+  </div>
+</template>

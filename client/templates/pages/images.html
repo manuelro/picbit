@@ -1,0 +1,44 @@
+<template name="authImage">
+  <div class="c-page c-image">
+    Images template
+  </div>
+</template>
+
+<template name="authImageAdd">
+  <div class="c-page c-image">
+    {{# if currentUser }}
+    {{> uploader then="parentedImages.insert" }}
+    {{ else }}
+    {{> uploader then="parentlessImages.insert" }}
+    {{/ if }}
+  </div>
+</template>
+
+<template name="authImageEdit">
+  <div class="c-page c-image c-image--edit">
+    {{ addState }}
+    {{> entityResolver state=instance.state id=router.route.params.id entityName="Image" subscriptionName="images" splitterPrefix="authImageEdit" carry="state" }}
+  </div>
+</template>
+
+<!-- Imagenes que fueron creadas con una cuenta -->
+<template name="authImageEditParentedImage">
+  {{> imageViewer entity=entity }}
+
+  <div>
+    {{> inputText type="text" context=(getStatePropContext bag.state "name") methodName="setStateProp" placeholder="Name" class="c-login-form__input--text" value=entity.name }}
+    {{> inputText type="text" context=(getStatePropContext bag.state "description") methodName="setStateProp" placeholder="Description" class="c-login-form__input--text" value=entity.description }}
+    {{> inputCheckbox text="Private" context=(getStatePropContext bag.state "isPrivate") methodName="setStateProp" isChecked=entity.isPrivate }}
+  </div>
+
+  {{# actionButton context=entity methodName="update" params=(makeBundle bag.state 'name' 'description' 'isPrivate') useParams="true" }}
+    {{# button type="submit" size="sm" text="Save" fill="blue" class="e-save" }}
+      <span class="c-button__icon">&#9658;</span>
+    {{/ button }}
+  {{/ actionButton }}
+</template>
+
+<!-- Imagenes que fueron creadas sin una cuenta -->
+<template name="authImageEditParentlessImage">
+  {{> imageViewer entity=entity }}
+</template>

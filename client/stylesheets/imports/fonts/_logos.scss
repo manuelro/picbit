@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+ @font-face {
+  font-family: 'bx-logos';
+  src: url('/assets/fonts/logos/bx-logos.eot?25679162');
+  src: url('/assets/fonts/logos/bx-logos.eot?25679162#iefix') format('embedded-opentype'),
+       url('/assets/fonts/logos/bx-logos.woff2?25679162') format('woff2'),
+       url('/assets/fonts/logos/bx-logos.woff?25679162') format('woff'),
+       url('/assets/fonts/logos/bx-logos.ttf?25679162') format('truetype'),
+       url('/assets/fonts/logos/bx-logos.svg?25679162#bx-logos') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'bx-logos';
+    src: url('/assets/fonts/logos/bx-logos.svg?25679162#bx-logos') format('svg');
+  }
+}
+
+
+.bx-logo-brand-outline-logo-2:before { content: '\e800'; } /* '' */
+.bx-logo-brand-outline-standalone:before { content: '\e801'; } /* '' */
+.bx-logo-brand-solid-logo-1:before { content: '\e802'; } /* '' */
+.bx-logo-brand-solid-standalone:before { content: '\e803'; } /* '' */
+.bx-logo-google-plus:before { content: '\e804'; } /* '' */
+.bx-logo-social-dropbox:before { content: '\e805'; } /* '' */
+.bx-logo-social-facebook:before { content: '\e806'; } /* '' */
+.bx-logo-social-linkedin:before { content: '\e807'; } /* '' */
+.bx-logo-social-twitter:before { content: '\e808'; } /* '' */

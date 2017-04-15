@@ -1,0 +1,11 @@
+@each $box-sizing in $box-sizings {
+  .#{$object-suffix}-box-sizing--#{$box-sizing} {
+    box-sizing: #{$box-sizing};
+  }
+}
+
+@each $box-shadow-name, $box-shadow-value in $box-shadows {
+  .#{$object-suffix}-box-shadow--#{$box-shadow-name} {
+    box-shadow: #{$box-shadow-value};
+  }
+}

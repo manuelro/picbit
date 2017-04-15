@@ -1,0 +1,30 @@
+.c-input--text {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px darken($dark, 20);
+  color: silver !important;
+  outline: none;
+
+  transition: border-bottom-color 0.5s ease-out, background-color 0.5s ease-out;
+}
+
+.c-input--text:not(:placeholder-shown):invalid, .c-input--text:invalid {
+  border-bottom-color: $red;
+}
+
+.c-input--text:valid, .c-input--text:focus {
+  border-bottom-color: $green;
+}
+
+.c-input--text:invalid:not(:focus) {
+  background-color: transparentize($red, 0.9);
+}
+
+.c-input--text:valid:not(:focus) {
+  background-color: transparentize($green, 0.95);
+}
+
+.c-input--text:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

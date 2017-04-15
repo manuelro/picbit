@@ -1,0 +1,17 @@
+@each $text-align in $text-aligns {
+  .#{$object-suffix}-text-align--#{$text-align} {
+    text-align: #{$text-align};
+  }
+}
+
+@each $text-transform in $text-transforms {
+  .#{$object-suffix}-text-transform--#{$text-transform} {
+    text-transform: #{$text-transform};
+  }
+}
+
+@each $text-decoration in $text-decorations {
+  .#{$object-suffix}-text-decoration--#{$text-decoration} {
+    text-decoration: #{$text-decoration};
+  }
+}

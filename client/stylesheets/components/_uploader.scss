@@ -1,0 +1,23 @@
+.c-uploader {
+  display: block;
+  text-align: center;
+}
+
+.c-uploader__label {
+  display: inline-block;
+  border: solid 2px $blue;
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+  margin: auto;
+}
+.c-uploader__label > input {
+  display: none;
+}
+
+.c-uploader__label__text {}
+
+.c-uploader__error {
+  color: $red;
+  display: block;
+  padding: 1em;
+}

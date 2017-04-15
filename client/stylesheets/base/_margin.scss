@@ -1,0 +1,11 @@
+@each $margin-name, $margin-value in $margins {
+  .#{$object-suffix}-margin--#{$margin-name} {
+    margin: #{$margin-value};
+  }
+
+  @each $side in $sides {
+    .#{$object-suffix}-margin-#{$side}--#{$margin-name} {
+      margin-#{$side}: #{$margin-value};
+    }
+  }
+}

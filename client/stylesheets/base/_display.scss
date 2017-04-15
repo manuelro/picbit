@@ -1,0 +1,15 @@
+@each $display in $displays {
+  .#{$object-suffix}-display--#{$display} {
+    display: #{$display};
+  }
+}
+
+// TODO: Fix this naming
+.o-display--table-cell{
+  display: table-cell;
+  white-space: nowrap;
+}
+.o-display--table__padding{
+  display: table-cell;
+  width: auto;
+}

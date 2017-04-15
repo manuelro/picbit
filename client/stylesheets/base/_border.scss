@@ -1,0 +1,61 @@
+@each $border-radius-name, $border-radius-value in $border-radiuses {
+  .#{$object-suffix}-border-radius--#{$border-radius-name} {
+    border-radius: #{$border-radius-value};
+  }
+
+  .#{$object-suffix}-border-top-left-radius--#{$border-radius-name} {
+    border-top-left-radius: #{$border-radius-value};
+  }
+
+  .#{$object-suffix}-border-top-right-radius--#{$border-radius-name} {
+    border-top-right-radius: #{$border-radius-value};
+  }
+
+  .#{$object-suffix}-border-bottom-left-radius--#{$border-radius-name} {
+    border-bottom-left-radius: #{$border-radius-value};
+  }
+
+  .#{$object-suffix}-border-bottom-right-radius--#{$border-radius-name} {
+    border-bottom-right-radius: #{$border-radius-value};
+  }
+}
+
+@each $color-name, $color-value in $colors {
+  .#{$object-suffix}-border-color--#{$color-name} {
+    border-color: #{$color-value};
+  }
+
+  @each $side in $sides {
+    .#{$object-suffix}-border-#{$side}-color--#{$color-name} {
+      border-#{$side}-color: #{$color-value};
+    }
+  }
+}
+
+@each $border-width-name, $border-width-value in $border-widths {
+  .#{$object-suffix}-border-width--#{$border-width-name} {
+    border-width: #{$border-width-value};
+  }
+
+  @each $side in $sides {
+    .#{$object-suffix}-border-#{$side}-width--#{$border-width-name} {
+      border-#{$side}-width: #{$border-width-value};
+    }
+  }
+}
+
+@each $border-style in $border-styles {
+  .#{$object-suffix}-border-style--#{$border-style} {
+    border-style: #{$border-style};
+  }
+
+  @each $side in $sides {
+    .#{$object-suffix}-border-#{$side}--#{$border-style} {
+      border-#{$side}-style: #{$border-style};
+    }
+
+    .#{$object-suffix}-border-#{$side}-style--#{$border-style} {
+      border-#{$side}-style: #{$border-style};
+    }
+  }
+}

@@ -1,0 +1,5 @@
+@each $height-name, $height-value in $heights {
+  .#{$object-suffix}-height--#{$height-name} {
+    height: #{$height-value};
+  }
+}

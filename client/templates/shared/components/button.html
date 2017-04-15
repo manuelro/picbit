@@ -1,0 +1,13 @@
+<template name="button">
+  {{# if type }}
+    <button type="{{type}}" class="c-button c-button--{{size}} c-button--{{type}} c-button--stroke--{{stroke}} c-button--fill--{{fill}} {{class}}">
+      {{ text }} {{> UI.contentBlock }}
+    </button>
+  {{ else }}
+    {{#if route }}
+      <a href="{{ pathFor route }}" class="c-button c-button--{{size}} c-button--{{type}} c-button--stroke--{{stroke}} c-button--fill--{{fill}} {{class}}">{{ text }} {{> UI.contentBlock }}</a>
+    {{ else }}
+      <div class="c-button c-button--{{size}} c-button--{{type}} c-button--stroke--{{stroke}} c-button--fill--{{fill}} {{class}}">{{ text }} {{> UI.contentBlock }}</div>
+    {{ /if }}
+  {{/ if }}
+</template>

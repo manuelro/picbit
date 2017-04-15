@@ -1,0 +1,11 @@
+@each $transition-duration-name, $transition-duration-value in $transition-durations {
+  .#{$object-suffix}-transition-duration--#{$transition-duration-name} {
+    transition-duration: #{$transition-duration-value};
+  }
+}
+
+@each $transition-property in $transition-properties {
+  .#{$object-suffix}-transition-property--#{$transition-property} {
+    transition-property: #{$transition-property};
+  }
+}

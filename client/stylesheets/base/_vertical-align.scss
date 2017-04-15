@@ -1,0 +1,13 @@
+@each $vertical-align in $vertical-aligns {
+  .#{$object-suffix}-vertical-align--#{$vertical-align} {
+    vertical-align: #{$vertical-align};
+  }
+}
+
+// TODO: Extract this
+.o-middle--absolute{
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}

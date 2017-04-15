@@ -1,0 +1,5 @@
+@each $clear in $clears {
+  .#{$object-suffix}-clear--#{$clear} {
+    clear: #{$clear};
+  }
+}

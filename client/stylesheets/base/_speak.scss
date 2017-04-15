@@ -1,0 +1,5 @@
+@each $speak in $speaks {
+  .#{$object-suffix}-speak--#{$speak} {
+    speak: #{$speak};
+  }
+}

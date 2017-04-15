@@ -1,0 +1,29 @@
+@each $color-name, $color-value in $colors {
+  .#{$object-suffix}-background-color--#{$color-name} {
+    background-color: #{$color-value};
+  }
+}
+
+@each $gradient-name, $gradient-value in $gradients {
+  .#{$object-suffix}-background-image--#{$gradient-name} {
+    background-image: #{$gradient-value};
+  }
+}
+
+@each $background-size in $background-sizes {
+  .#{$object-suffix}-background-size--#{$background-size} {
+    background-size: #{$background-size};
+  }
+}
+
+@each $background-position in $background-positions {
+  .#{$object-suffix}-background-position--#{$background-position} {
+    background-position: #{$background-position};
+  }
+}
+
+@each $background-repeat in $background-repeats {
+  .#{$object-suffix}-background-repeat--#{$background-repeat} {
+    background-repeat: #{$background-repeat};
+  }
+}

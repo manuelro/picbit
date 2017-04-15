@@ -1,0 +1,18 @@
+<template name="uploader">
+  <div class="c-uploader">
+    {{# if instance.state.get 'uploading' }}
+    <div class="c-uploader__label">
+      <div class="c-uploader__label__text">Uploading...</div>
+    </div>
+    {{ else }}
+    <label class="c-uploader__label">
+      <input type="file" name="" value="" class="e-file">
+      <div class="c-uploader__label__text">Upload</div>
+    </label>
+    {{/ if }}
+
+    {{# with instance.state.get 'error' }}
+    <small class="c-uploader__error">{{reason}}</small>
+    {{/ with }}
+  </div>
+</template>

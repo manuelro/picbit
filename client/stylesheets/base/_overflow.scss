@@ -1,0 +1,13 @@
+@each $overflow in $overflows {
+  .#{$object-suffix}-overflow--#{$overflow} {
+    overflow: #{$overflow};
+  }
+
+  .#{$object-suffix}-overflow-y--#{$overflow} {
+    overflow-y: #{$overflow};
+  }
+
+  .#{$object-suffix}-overflow-x--#{$overflow} {
+    overflow-x: #{$overflow};
+  }
+}

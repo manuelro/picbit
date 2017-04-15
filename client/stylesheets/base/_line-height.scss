@@ -1,0 +1,5 @@
+@each $line-height-name, $line-height-value in $line-heights {
+  .#{$object-suffix}-line-height--#{$line-height-name} {
+    line-height: #{$line-height-value};
+  }
+}

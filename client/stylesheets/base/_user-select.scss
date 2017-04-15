@@ -1,0 +1,5 @@
+@each $user-select in $user-selects {
+  .#{$object-suffix}-user-select--#{$user-select} {
+    user-select: #{$user-select};
+  }
+}

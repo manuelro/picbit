@@ -1,0 +1,5 @@
+@for $z-index from 0 to $z-indexes+1 {
+  .#{$object-suffix}-z-index--#{$z-index}-#{$z-indexes} {
+    z-index: $z-index;
+  }
+}

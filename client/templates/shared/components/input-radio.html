@@ -1,0 +1,8 @@
+<template name="inputRadio">
+  <label class="c-input-radio">
+    <input type="radio" {{isChecked}} name="{{name}}" value="{{value}}" class="c-input-radio__input">
+    <div class="c-input-radio__content">
+      {{ text }} {{> UI.contentBlock }}
+    </div>
+  </label>
+</template>

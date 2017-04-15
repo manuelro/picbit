@@ -1,0 +1,28 @@
+@each $font-size-name, $font-size-value in $font-sizes {
+  .#{$object-suffix}-font-size--#{$font-size-name} {
+    font-size: #{$font-size-value};
+  }
+}
+
+@each $font-style in $font-styles {
+  .#{$object-suffix}-font-style--#{$font-style} {
+    font-style: #{$font-style};
+  }
+}
+
+@each $font-weight in $font-weights {
+  .#{$object-suffix}-font-weight--#{$font-weight} {
+    font-weight: #{$font-weight};
+  }
+}
+
+@each $font-variant in $font-variants {
+  .#{$object-suffix}-font-variant--#{$font-variant} {
+    font-variant: #{$font-variant};
+  }
+}
+
+//TODO: Remove this is further versions
+.o-font--inherit {
+  font: inherit;
+}

@@ -1,0 +1,41 @@
+<template name="nav">
+  <nav class="c-nav {{ conditional (instance.state.get 'isActive') 'c-nav--active' }}">
+    <div class="c-nav__logo">{{> svgLogo scale=0.5 }}</div>
+
+    <span class="c-nav__toggle">
+      {{> checkboxButton parentState=instance.state parentStateProperty='isActive' icon='plus' iconClass='o-font-size--lg' }}
+    </span>
+
+    {{# navList isRoot="true" }}
+      {{# each getItems }}
+
+          {{# navListItem isRoot="true" auth=auth }}
+            {{> navButton text=text route=route name=name isRoot="true" }}
+
+            {{# if children }}
+
+              {{# navList }}
+
+                {{# each children }}
+
+                  {{# navListItem auth=auth }}
+                    {{> navButton text=text route=route }}
+                  {{/ navListItem }}
+
+                {{/ each }}
+
+              {{/ navList }}
+
+            {{/ if }}
+
+          {{/ navListItem }}
+
+      {{/ each }}
+
+    {{/ navList}}
+
+    {{# if currentUser }}
+      {{> logoutButton class="o-margin-top--md" }}
+    {{/ if }}
+  </nav>
+</template>

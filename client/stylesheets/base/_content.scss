@@ -1,0 +1,5 @@
+@each $content-name, $content-value in $contents {
+  .#{$object-suffix}-content--#{$content-name} {
+    content: #{$content-value};
+  }
+}

@@ -1,0 +1,107 @@
+.c-packages {}
+
+.c-packages__list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.c-package {
+  padding: 1em;
+  position: relative;
+
+  border-width: 2px;
+  border-style: solid;
+  border-color: darken($dark, 2);
+  border-radius: 10px;
+
+  margin: 1em 0;
+
+  text-align: center;
+
+  transition: border-color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.c-packages__list__item .c-input-radio__input {
+  display: none;
+}
+
+.c-input-radio__input:checked + .c-input-radio__content .c-package {
+  background: transparentize(white, 0.95);
+  border-color: white;
+}
+
+.c-package__name {
+  font-size: 1.3em;
+  margin-top: 0;
+  margin-bottom: 0.2em;
+  margin-top: 2em;
+}
+
+.c-package__price {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  // color: white;
+
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.5em;
+
+  white-space: nowrap;
+
+  border-radius: 5px;
+}
+
+.c-package__description {
+  margin-bottom: 0;
+  color: transparentize(white, 0.5);
+}
+
+.c-package--free {
+  &:hover {
+    border-color: $green;
+  }
+
+  color: lighten($green, 10);
+  > .c-package__price {
+    background-color: transparentize($green, 0.85);
+  }
+  // color: darken($green, 50);
+}
+
+.c-package--personal {
+  &:hover {
+    border-color: $yellow;
+  }
+
+  color: lighten($yellow, 10);
+  > .c-package__price {
+    background-color: transparentize($yellow, 0.85);
+  }
+  // color: darken($yellow, 50);
+}
+
+.c-package--pro {
+  &:hover {
+    border-color: $blue;
+  }
+
+  color: lighten($blue, 10);
+  > .c-package__price {
+    background-color: transparentize($blue, 0.85);
+  }
+  // color: darken($blue, 50);
+}
+
+.c-package--enterprise {
+  &:hover {
+    border-color: $purple;
+  }
+
+  color: lighten($purple, 10);
+  > .c-package__price {
+    background-color: transparentize($purple, 0.85);
+  }
+  // color: darken($purple, 50);
+}

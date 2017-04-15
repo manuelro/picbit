@@ -1,0 +1,34 @@
+<template name="loginForm">
+  <form class="c-login-form" action="action" autocomplete="off">
+    {{> inputText type="email" context=context methodName="setEmail" placeholder="Email" attrs=inputAttrs class="c-login-form__input--text" }}
+    {{> inputText type="password" context=context methodName="setPassword" placeholder="Password" attrs=inputAttrs class="c-login-form__input--text" }}
+
+    {{# with instance.state.get 'error' }}
+    <div class="o-color--red o-padding-bottom--sm">
+      <small> {{ reason }} </small>
+    </div>
+    {{/ with }}
+
+    <div class="o-display--table">
+      <div class="o-display--table-cell o-vertical-align--middle">
+        {{# if instance.state.get 'isNewAccount' }}
+          {{# button type="submit" size="sm" text="Sign Up" fill="purple" }}
+            <span class="c-button__icon">&#9658;</span>
+          {{/ button }}
+        {{ else }}
+          {{# button type="submit" size="sm" text="Login" fill="yellow" }}
+            <span class="c-button__icon">&#9658;</span>
+          {{/ button }}
+        {{/ if }}
+      </div>
+
+      <div class="o-display--table-cell o-vertical-align--middle">
+        {{# if instance.state.get 'isNewAccount' }}
+          {{> checkboxButton parentState=instance.state parentStateProperty="isNewAccount" text="Need to login?" buttonClass="c-button--xs" }}
+        {{ else }}
+          {{> checkboxButton parentState=instance.state parentStateProperty="isNewAccount" text="Need to sign up?" buttonClass="c-button--xs" }}
+        {{/ if }}
+      </div>
+    </div>
+  </form>
+</template>

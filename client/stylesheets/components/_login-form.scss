@@ -1,0 +1,18 @@
+.c-login-form {
+  margin: 1em auto;
+  display: block;
+}
+
+.c-login-form__input--text {
+  text-align: center;
+  display: block;
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+  margin: 0.5em 0;
+  width: 100%;
+}
+
+.c-login-form__logout-button {
+  margin: auto;
+  display: inline-block;
+}

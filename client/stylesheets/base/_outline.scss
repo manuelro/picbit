@@ -1,0 +1,11 @@
+@each $outline in $outlines {
+  .#{$object-suffix}-outline--#{$outline} {
+    outline: #{$outline};
+  }
+}
+
+@each $outline-width-name, $outline-width-value in $outline-widths {
+  .#{$object-suffix}-outline-width--#{$outline-width-name} {
+    outline-width: #{$outline-width-value};
+  }
+}

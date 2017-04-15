@@ -1,0 +1,20 @@
+.o-transform-translate-x-neg--6-12{
+  transform: translateX(-50%);
+}
+
+@each $perspective-name, $perspective-value in $perspectives {
+  .#{$object-suffix}-perspective--#{$perspective-name} {
+    perspective: #{$perspective-value};
+  }
+}
+
+.o-transform-rotate-y--zero{
+  transform: rotateY(0deg);
+}
+
+$transform-rotate-part: 360deg / 24;
+@for $i from 1 through 24{
+  .o-transform-rotate-y--#{$i}-24{
+    transform: rotateY($transform-rotate-part * $i);
+  }
+}

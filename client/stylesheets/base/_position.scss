@@ -1,0 +1,5 @@
+@each $position in $positions {
+  .#{$object-suffix}-position--#{$position} {
+    position: #{$position};
+  }
+}

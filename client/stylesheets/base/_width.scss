@@ -1,0 +1,12 @@
+@each $width-name, $width-value in $widths {
+  .#{$object-suffix}-width--#{$width-name} {
+    width: #{$width-value};
+  }
+}
+
+$width-part: 100% / 12;
+@for $i from 1 to 12 {
+  .o-width--#{$i}-12{
+    width: $width-part * $i;
+  }
+}

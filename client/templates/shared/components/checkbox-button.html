@@ -1,0 +1,9 @@
+<template name="checkboxButton">
+  <label class="o-display--table">
+    <input type="checkbox" class="o-display--none {{ inputClass }} e-input" {{isChecked}} >
+    {{# button class=buttonClass }}
+      <span class="{{ textClass }} o-display--table-cell o-vertical-align--middle">{{ text }}</span>
+      <span class="{{ iconClass }} o-display--table-cell o-vertical-align--middle">{{# if icon }} {{> icon name=icon }} {{/ if }}</span>
+    {{/ button }}
+  </label>
+</template>

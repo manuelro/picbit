@@ -1,0 +1,5 @@
+@each $max-width-name, $max-width-value in $max-widths {
+  .#{$object-suffix}-max-width--#{$max-width-name} {
+    max-width: #{$max-width-value};
+  }
+}

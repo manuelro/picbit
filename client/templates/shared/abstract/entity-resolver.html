@@ -1,0 +1,9 @@
+<template name="entityResolver">
+  {{# if check }}
+    {{# if checkProp getEntity }}
+      {{> typeSplitter print=print templateName=templateName prefix=splitterPrefix entity=getEntity bag=getBag }}
+    {{/ if }}
+  {{ else }}
+    {{> typeSplitter print=print templateName=templateName prefix=splitterPrefix entity=getEntity bag=getBag }}
+  {{/ if }}
+</template>

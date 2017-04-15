@@ -1,0 +1,7 @@
+<template name="logoutButton">
+  {{# actionButton context=(ref 'Meteor') methodName='logout' }}
+    {{# button size="xs" text="Logout" fill="blue" buttonClass="{{class}} c-logout-button" }}
+      <span class="c-button__icon">&#9658;</span>
+    {{/ button }}
+  {{/ actionButton }}
+</template>

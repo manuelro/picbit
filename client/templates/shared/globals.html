@@ -1,0 +1,53 @@
+<template name="header">
+  {{> nav}}
+</template>
+
+<template name="footer">
+
+</template>
+
+<template name="contextMenu">
+  The context menu
+</template>
+
+<template name="capsule">
+  <div class="c-capsule o-display--table">
+    <label class="c-capsule__input c-input--checkbox--decorated--checkmark o-display--table-cell o-vertical-align--middle">
+      <input type="checkbox" class="c-input--checkbox--decorated--checkmark__input">
+      <span class="c-input--checkbox--decorated--checkmark__icon o-display--table-cell o-vertical-align--middle bx-icon-check"></span>
+    </label>
+
+    <div class="c-capsule__text o-display--table-cell o-vertical-align--middle o-key-value-list__item--stacked o-key-value-list__item--inverted">
+      <span class="c-capsule__text__header o-key">{{name}}</span>
+      <span class="c-capsule__text__footer o-value">{{description}}</span>
+    </div>
+  </div>
+</template>
+
+<template name="keyValueItem">
+  <span class="o-key">{{key}}</span>
+  <span class="o-value">{{value}}</span>
+</template>
+
+<template name="tabHeader">
+  <label for="{{for}}" class="c-tab-header {{#if active}}c-tab-header--is-active{{/if}}">
+    <span class="c-tab-header__text">
+      <span class="c-tab-header__name">{{text}}</span>
+      <span class="c-tab-header__description">{{description}}</span>
+    </span>
+  </label>
+</template>
+
+<template name="myTabContent">
+  <input type="radio" name="{{name}}" id="{{id}}" class="c-tab__input">
+  <div class="c-tab__content {{#if active}}is-active{{/if}}">
+    {{> removableItemList }}
+
+    <ul class="c-removable-item-list__controls o-display--table">
+      <li class="c-removable-item-list__control o-display--table-cell o-vertical-align--middle">
+        <a class="c-removable-item__action c-removable-item__action--add bx-icon-signs-1" href="#"></a>
+      </li>
+    </ul>
+
+  </div>
+</template>

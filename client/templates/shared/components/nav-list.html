@@ -1,0 +1,11 @@
+<template name="navList">
+  <ul class="{{ getClass }}">
+    {{# if isRoot }}
+      {{> UI.contentBlock }}
+    {{ else }}
+      <div class="c-nav-list--nested__inner">
+        {{> UI.contentBlock }}
+      </div>
+    {{/ if}}
+  </ul>
+</template>

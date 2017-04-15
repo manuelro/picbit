@@ -1,0 +1,5 @@
+@each $appearance in $appearances {
+  .#{$object-suffix}-appearance--#{$appearance} {
+    appearance: #{$appearance};
+  }
+}

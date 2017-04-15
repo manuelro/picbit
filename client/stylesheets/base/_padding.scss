@@ -1,0 +1,11 @@
+@each $padding-name, $padding-value in $paddings {
+  .#{$object-suffix}-padding--#{$padding-name} {
+    padding: #{$padding-value};
+  }
+
+  @each $side in $sides {
+    .#{$object-suffix}-padding-#{$side}--#{$padding-name} {
+      padding-#{$side}: #{$padding-value};
+    }
+  }
+}

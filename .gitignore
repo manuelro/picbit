@@ -1,0 +1,5 @@
+node_modules/
+settings/production.json
+settings/development.json
+deployment_token.json
+.meteor/local

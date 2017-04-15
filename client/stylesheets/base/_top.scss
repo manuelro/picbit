@@ -1,0 +1,9 @@
+@each $top-name, $top-value in $tops {
+  .#{$object-suffix}-top--#{$top-name} {
+    top: #{$top-value};
+  }
+}
+
+.o-top--1-2 {
+  top: 50%;
+}

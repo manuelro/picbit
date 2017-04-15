@@ -1,0 +1,16 @@
+// TODO: Refactor this
+.o-opacity--zero{
+  opacity: 0;
+}
+
+.o-opacity--full{
+  opacity: 1;
+}
+
+
+$opacity-part: 1 / 12;
+@for $i from 1 to 12 {
+  .o-opacity--#{$i}-12{
+    opacity: $opacity-part * $i;
+  }
+}

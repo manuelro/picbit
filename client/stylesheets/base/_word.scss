@@ -1,0 +1,5 @@
+@each $word-wrap in $word-wraps {
+  .#{$object-suffix}-word-wrap--#{$word-wrap} {
+    word-wrap: #{$word-wrap};
+  }
+}

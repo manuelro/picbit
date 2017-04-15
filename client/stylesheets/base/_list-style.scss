@@ -1,0 +1,11 @@
+@each $list-style in $list-styles {
+  .#{$object-suffix}-list-style--#{$list-style} {
+    list-style: #{$list-style};
+  }
+}
+
+@each $list-style-type in $list-styles-types {
+  .#{$object-suffix}-list-style-type--#{$list-style-type} {
+    list-style-type: #{$list-style-type};
+  }
+}

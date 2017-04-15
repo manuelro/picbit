@@ -1,0 +1,5 @@
+@each $cursor in $cursors {
+  .#{$object-suffix}-cursor--#{$cursor} {
+    cursor: #{$cursor};
+  }
+}

@@ -1,0 +1,14 @@
+@each $left-name, $left-value in $lefts {
+  .#{$object-suffix}-left--#{$left-name} {
+    left: #{$left-value};
+  }
+}
+
+// TODO: Extract this
+.o-left--6-12 {
+  left: 50%;
+}
+
+.o-left--1-10 {
+  left: 10%;
+}

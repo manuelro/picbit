@@ -1,0 +1,11 @@
+<template name="home">
+  <div class="c-page">
+    {{# if not currentUser }}
+      {{> loginForm }}
+    {{/ if }}
+
+    {{> packages }}
+
+    <!-- {{> entityResolver entityName="Image" subscriptionName="" }} -->
+  </div>
+</template>

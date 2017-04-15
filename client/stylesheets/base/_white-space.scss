@@ -1,0 +1,5 @@
+@each $white-space in $white-spaces {
+  .#{$object-suffix}-white-space--#{$white-space} {
+    white-space: #{$white-space};
+  }
+}

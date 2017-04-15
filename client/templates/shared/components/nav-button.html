@@ -1,0 +1,7 @@
+<template name="navButton">
+  {{#if route}}
+    {{> linkButton text=text route=route class=getClass }}
+  {{else}}
+    {{> button text=text class=getClass }}
+  {{/if}}
+</template>
