@@ -4,8 +4,28 @@
       {{> loginForm }}
     {{/ if }}
 
-    {{> packages }}
+    {{# if not currentUser }}
+      {{> packages }}
+    {{/ if }}
 
-    <!-- {{> entityResolver entityName="Image" subscriptionName="" }} -->
+    {{# loaderMiddleware entityName="Image" subscriptionName="images.all" }}
+      {{# if context.subscription.ready }}
+
+      {{# grid items=context.data }}
+        {{# if (stardust.utils.belongsTo context) }}
+          {{> imageViewer showEditButton="true" entity=context }}
+        {{ else }}
+          <a href="{{ pathFor route='auth.image.edit' id=context._id }}">
+            {{> imageViewer entity=context }}
+          </a>
+        {{/ if }}
+      {{/ grid }}
+
+      {{ else }}
+
+        Loading...
+
+      {{/ if }}
+    {{/ loaderMiddleware }}
   </div>
 </template>

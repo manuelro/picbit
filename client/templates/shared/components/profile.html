@@ -5,14 +5,9 @@
   {{> inputText type="text" context=(getPropContext 'description') methodName="setProfileProperty" placeholder="Short bio" attrs=inputAttrs class="c-login-form__input--text" value=getProfile.description }}
 
   {{log getProfile}}
+
   <h3>Choose your package</h3>
-  <ul class="c-packages__list">
-    {{# each resolver.global 'Packages' }}
-    <li class="c-packages__list__item">
-      {{# inputRadio name="package" context=(getPropContext 'package') methodName="setProfileProperty" value=id isChecked=(eval.eqs id getProfile.package) class="c-package" }}
-        {{> package }}
-      {{/ inputRadio }}
-    </li>
-    {{/ each }}
-  </ul>
+  {{# grid items=(resolver.global 'Packages') }}
+    {{> package context=context }}
+  {{/ grid }}
 </template>

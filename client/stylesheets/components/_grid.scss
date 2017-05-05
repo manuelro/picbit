@@ -1,0 +1,30 @@
+.c-grid{
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.c-grid__item {
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 420px) {
+  .c-grid__item{
+    width: 50%;
+    float: left;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .c-grid__item{
+    width: 33%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .c-grid__item{
+    width: 20%;
+  }
+}

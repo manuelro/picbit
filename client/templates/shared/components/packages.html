@@ -1,24 +1,22 @@
 <template name="packages">
   <div class="c-packages">
     <h2 class="c-page__title">Packages</h2>
-    <ul class="c-packages__list">
-      {{# each resolver.global 'Packages' }}
-        <li>{{> package }}</li>
-      {{/ each }}
-    </ul>
+    {{# grid items=(resolver.global 'Packages') }}
+      {{> package context=context }}
+    {{/ grid }}
   </div>
 </template>
 
 <template name="package">
-  <div class="c-package c-package--{{id}}">
-    <h3 class="c-package__name">{{ name }}</h3>
-    <span class="c-package__price">${{ math.method 'round' fee }} / Month</span>
+  <div class="c-package c-package--{{context.id}}">
+    <h3 class="c-package__name">{{ context.name }}</h3>
+    <span class="c-package__price">${{ math.method 'round' context.fee }} / Month</span>
     <p class="c-package__description">
-      {{ description }}
-      {{# if storage.useMb }}
-        Up to {{ storage.mb }}Mb per month.
+      {{ context.description }}
+      {{# if context.storage.useMb }}
+        Up to {{ context.storage.mb }}Mb per month.
       {{ else }}
-        Up to {{ storage.gb }}Gb per month.
+        Up to {{ context.storage.gb }}Gb per month.
       {{/ if }}
     </p>
   </div>

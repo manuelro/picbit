@@ -42,3 +42,4 @@ iron:router
 lepozepo:cloudinary
 dispatch:kernel
 manuelro:blaze-math
+shmck:meteor-social-buttons

@@ -1,3 +1,41 @@
 .c-image {
 
 }
+
+.c-image--edit{
+  overflow: hidden;
+}
+
+.c-image--edit__image-viewer {
+  margin: auto;
+}
+
+.c-image--edit__sidebar {}
+.c-image--edit__sidebar--left{}
+
+@media screen and (min-width: 420px) {
+  .c-image--edit__image-viewer{
+    width: 70%;
+    padding-bottom: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .c-image--edit__sidebar{
+    float: left;
+  }
+
+  .c-image--edit__sidebar--left{
+    width: 38%;
+  }
+
+  .c-image--edit__sidebar--right{
+    width: 38%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .c-grid__item{
+    width: 20%;
+  }
+}

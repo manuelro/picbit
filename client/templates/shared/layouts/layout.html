@@ -1,0 +1,15 @@
+<template name="Layout">
+  <div class="c-layout o-display--block">
+    <header class="c-layout__header o-display--block">
+      {{> nav }}
+    </header>
+
+    <main class="c-layout__main c-layout__main--filled u-layout-limit o-display--block">{{> yield }}</main>
+
+    <footer class="c-layout__footer u-layout-limit o-display--block">
+      <small>
+        Copyright (c) 2017 PicBit All Rights Reserved.
+      </small>
+    </footer>
+  </div>
+</template>

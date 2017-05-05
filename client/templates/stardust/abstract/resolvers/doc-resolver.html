@@ -1,0 +1,9 @@
+<template name="docResolver">
+  {{# if templateName }}
+    {{# tplResolver templateName=templateName context=getContext }}
+    {{> UI.contentBlock data=getContext.data bag=getContext.bag }}
+    {{/ tplResolver }}
+  {{ else }}
+    {{> UI.contentBlock data=getContext.data bag=getContext.bag }}
+  {{/ if }}
+</template>

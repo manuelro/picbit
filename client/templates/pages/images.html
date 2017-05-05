@@ -14,31 +14,73 @@
   </div>
 </template>
 
+<!-- Aqui sucede una divergencia segun el tipo de la imagen -->
 <template name="authImageEdit">
   <div class="c-page c-image c-image--edit">
-    {{ addState }}
-    {{> entityResolver state=instance.state id=router.route.params.id entityName="Image" subscriptionName="images" splitterPrefix="authImageEdit" carry="state" }}
+    {{# docResolver entityId=router.route.params.id entityName="Image" subscriptionName="images.all" }}
+      <div class="c-image--edit__sidebar c-image--edit__sidebar--left">
+        {{> imageViewer entity=data showUrl=router.route.url showSocialButton="true" class="c-image--edit__image-viewer" }}
+      </div>
+
+      <div class="c-image--edit__sidebar c-image--edit__sidebar--right">
+        {{> tplDiverger propToUse="type" data=data suffixToAdd="edit" }}
+      </div>
+    {{/ docResolver }}
   </div>
-</template>
-
-<!-- Imagenes que fueron creadas con una cuenta -->
-<template name="authImageEditParentedImage">
-  {{> imageViewer entity=entity }}
-
-  <div>
-    {{> inputText type="text" context=(getStatePropContext bag.state "name") methodName="setStateProp" placeholder="Name" class="c-login-form__input--text" value=entity.name }}
-    {{> inputText type="text" context=(getStatePropContext bag.state "description") methodName="setStateProp" placeholder="Description" class="c-login-form__input--text" value=entity.description }}
-    {{> inputCheckbox text="Private" context=(getStatePropContext bag.state "isPrivate") methodName="setStateProp" isChecked=entity.isPrivate }}
-  </div>
-
-  {{# actionButton context=entity methodName="update" params=(makeBundle bag.state 'name' 'description' 'isPrivate') useParams="true" }}
-    {{# button type="submit" size="sm" text="Save" fill="blue" class="e-save" }}
-      <span class="c-button__icon">&#9658;</span>
-    {{/ button }}
-  {{/ actionButton }}
 </template>
 
 <!-- Imagenes que fueron creadas sin una cuenta -->
-<template name="authImageEditParentlessImage">
-  {{> imageViewer entity=entity }}
+<template name="parentlessImageEdit">
+
+</template>
+
+<!-- Imagenes que fueron creadas con una cuenta -->
+<template name="parentedImageEdit">
+  {{# if (stardust.utils.belongsTo data) }}
+    {{# editorMiddleware }}
+
+      {{# keyupSpy
+        methodsContext=(stardust.utils.contextualize 'setStateProp' 'image.name' stardust.utils context.instance.state)
+        methodsToCall="setStateProp" paramsToPass="value"
+        }}
+        {{> inputText
+          class="c-login-form__input--text c-input--text"
+          value=../data.name
+          placeholder="Name"
+          }}
+      {{/ keyupSpy }}
+
+      {{# keyupSpy
+        methodsContext=(stardust.utils.contextualize 'setStateProp' 'image.description' stardust.utils context.instance.state)
+        methodsToCall="setStateProp" paramsToPass="value"
+        }}
+        {{> inputText
+          class="c-login-form__input--text c-input--text"
+          value=../data.description
+          placeholder="Description"
+          }}
+      {{/ keyupSpy }}
+
+      {{# clickSpy
+        methodsContext=context
+        methodsToCall="edit" dataToPass=(context.instance.state.get 'image') }}
+      {{# button type="submit" size="sm" text="Save" fill="yellow" class="e-save" }}
+        <span class="c-button__icon">&#9658;</span>
+      {{/ button }}
+      {{/ clickSpy }}
+
+      {{# if (context.instance.state.get 'saving') }}
+        <div class="o-padding--sm">
+          Saving...
+        </div>
+      {{/ if }}
+
+      {{# with (context.instance.state.get 'error') }}
+        <div class="o-color--red o-padding--sm">
+          {{reason}}
+        </div>
+      {{/ with }}
+
+    {{/ editorMiddleware }}
+  {{/ if }}
 </template>

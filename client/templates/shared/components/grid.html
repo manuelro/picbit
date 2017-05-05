@@ -1,0 +1,9 @@
+<template name="grid">
+  <ul class="c-grid">
+    {{# each items }}
+      <li class="c-grid__item">
+        {{> UI.contentBlock context=this }}
+      </li>
+    {{/ each }}
+  </ul>
+</template>

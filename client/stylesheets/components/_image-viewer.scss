@@ -7,3 +7,26 @@
   background-color: black;
   border-radius: 5px;
 }
+
+.c-image-viewer__social-buttons{
+  margin: 10px 0;
+}
+
+.c-image-viewer__url{
+  background-color: transparentize(black, 0.8);
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px;
+}
+.c-image-viewer__url__name{
+  color: gray;
+  font-size: 0.8em;
+}
+.c-image-viewer__url__value{
+  font-size: 0.8em;
+  word-wrap: break-word;
+}
+
+.c-image-viewer__actions{
+  padding: 10px;
+}

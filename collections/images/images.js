@@ -31,6 +31,10 @@ Image = Class.create({
       return this.save();
     },
     removeTag ( index ) {},
+    update ( data ) {
+      Object.assign( this, data );
+      return this.save();
+    },
     drop () {
       return this.remove();
     }

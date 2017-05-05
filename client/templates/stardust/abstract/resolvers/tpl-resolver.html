@@ -1,0 +1,7 @@
+<template name="tplResolver">
+  {{# if templateName }}
+    {{> Template.dynamic template=templateName data=context }}
+  {{ else }}
+    {{> UI.contentBlock }}
+  {{/ if }}
+</template>

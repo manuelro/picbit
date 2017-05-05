@@ -1,3 +1,33 @@
 <template name="imageViewer">
-  <div class="c-image-viewer" style="background-image: url({{ cdy.getUrl entity.public_id w=300 }});"></div>
+  <div class="c-image-viewer {{class}}" style="background-image: url({{ cdy.getUrl entity.public_id w=300 }});">
+      {{# if or showEditButton showViewButton }}
+      <div class="c-image-viewer__actions">
+        {{# if showEditButton }}
+        <a href="{{ pathFor route='auth.image.edit' id=this.entity._id }}" class="c-image-viewer__actions__button">
+          {{> button size="xs" text="Edit" fill="purple" }}
+        </a>
+        {{/ if }}
+
+        {{# if showViewButton }}
+          <a href="{{ pathFor route='auth.image.edit' id=this.entity._id }}" class="c-image-viewer__actions__button">
+            {{> button size="xs" text="View" fill="purple" }}
+          </a>
+        {{/ if }}
+      </div>
+      {{/ if }}
+
+  </div>
+
+  {{# if showSocialButton }}
+  <div class="c-image-viewer__social-buttons">
+    {{> social_buttons url=router.route.originalUrl text=this.entity.name }}
+  </div>
+  {{/ if }}
+
+  {{# if showUrl }}
+  <div class="c-image-viewer__url">
+    <div class="c-image-viewer__url__name">URL</div>
+    <code class="c-image-viewer__url__value">{{showUrl}}</code>
+  </div>
+  {{/ if }}
 </template>

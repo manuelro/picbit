@@ -200,3 +200,11 @@ Template.registerHelper( 'eval', function () {
 
   return { gt, gte, lt, lte, eq, eqs }
 } );
+
+Template.registerHelper( 'or', function ( ...props ) {
+  props.pop();
+
+  for ( let prop of props ) {
+    if ( prop ) return prop;
+  }
+} );
